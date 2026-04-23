@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks } from "@/app/constant/data";
@@ -8,23 +8,8 @@ import { FaBars } from "react-icons/fa";
 
 export default function Header() {
   const pathname = usePathname();
-  const [activeLink, setActiveLink] = useState("home");
+  const activeLink = pathname ? pathname.substring(1) || "home" : "home";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  useEffect(() => {
-    if (pathname) {
-      const path = pathname.substring(1) || "home";
-      setActiveLink(path);
-    }
-  }, [pathname]);
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-gray-900/95 backdrop-blur-md md:bg-transparent md:backdrop-blur-none">
@@ -49,7 +34,6 @@ export default function Header() {
                     key={id}
                     href={path}
                     onClick={() => {
-                      setActiveLink(id);
                       setIsMenuOpen(false);
                     }}
                     className={`px-3 py-2 md:py-1.5 rounded-lg md:rounded-full text-sm font-medium
