@@ -3,12 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navLinks } from "@/app/constant/data";
 import { FaBars } from "react-icons/fa";
+import { navLinks } from "@/app/constant/data";
+import type { NavLinkId } from "@/types/portfolio";
 
 export default function Header() {
   const pathname = usePathname();
-  const activeLink = pathname ? pathname.substring(1) || "home" : "home";
+  const activeLink = (pathname ? pathname.substring(1) || "home" : "home") as NavLinkId;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -21,6 +22,7 @@ export default function Header() {
                 R. Eloi Charly
               </Link>
               <button
+                type="button"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white p-2"
               >
