@@ -1,16 +1,14 @@
-import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGlobe,
-  faCodeBranch,
-  faRocket,
-  faCalendar,
-} from "@fortawesome/free-solid-svg-icons";
+import { faRocket, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import HalfBar from "./HalfBar";
+import type { ProjectItem } from "@/types/portfolio";
 
-import Link from "next/link";
+interface ProjectCardProps {
+  project: ProjectItem;
+  index: number;
+}
 
-const ProjectCard = ({ project, index }) => {
+export default function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <div
       className="relative p-[1px] rounded-2xl bg-gradient-to-br from-cyan-500/30 to-emerald-500/30 hover:shadow-2xl transition-all"
@@ -23,9 +21,7 @@ const ProjectCard = ({ project, index }) => {
           <div className="p-2 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-lg">
             <FontAwesomeIcon icon={faRocket} className="text-white text-xl" />
           </div>
-          <h3 className="text-xl font-semibold text-gray-100">
-            {project.title}
-          </h3>
+          <h3 className="text-xl font-semibold text-gray-100">{project.title}</h3>
         </div>
 
         <div className="flex items-center gap-2 text-cyan-400 mb-3">
@@ -33,14 +29,12 @@ const ProjectCard = ({ project, index }) => {
           <span className="text-sm">{project.date}</span>
         </div>
 
-        <p className="text-gray-300 text-sm mb-4 flex-grow">
-          {project.description}
-        </p>
+        <p className="text-gray-300 text-sm mb-4 flex-grow">{project.description}</p>
 
         <div className="flex items-center gap-3 mb-4">
-          {project.tech.map((icon, i) => (
+          {project.tech.map((icon, iconIndex) => (
             <FontAwesomeIcon
-              key={i}
+              key={`${project.title}-${iconIndex}`}
               icon={icon}
               className="text-2xl text-emerald-400"
             />
@@ -51,6 +45,4 @@ const ProjectCard = ({ project, index }) => {
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-cyan-500/10 to-emerald-500/10 blur-xl opacity-30 transition-opacity" />
     </div>
   );
-};
-
-export default ProjectCard;
+}

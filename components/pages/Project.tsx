@@ -1,12 +1,9 @@
 "use client";
 
 import { Title } from "@/components/Title";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-
-// Importation de Swiper.js
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -33,24 +30,17 @@ export default function Projects() {
           subtitle="Transformer les idées en réalité numérique, un projet à la fois"
         />
 
-        {/* Swiper Slider */}
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
           slidesPerView={3}
           breakpoints={{
             0: { slidesPerView: 1, spaceBetween: 10 },
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 30,
-            },
+            640: { slidesPerView: 1, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 30 },
             1024: { slidesPerView: 3 },
           }}
-          loop={true}
+          loop
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
@@ -58,7 +48,7 @@ export default function Projects() {
           className="mt-10"
         >
           {projects.map((project, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={`${project.title}-${index}`}>
               <ProjectCard index={index} project={project} />
             </SwiperSlide>
           ))}

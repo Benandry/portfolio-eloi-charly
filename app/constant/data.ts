@@ -3,13 +3,12 @@ import {
   FaLaptopCode,
   FaBriefcase,
   FaGraduationCap,
-  FaCode,
+  FaCode as FaCodeIcon,
   FaEnvelope,
 } from "react-icons/fa";
 import {
   faReact,
   faNodeJs,
-  faPython,
   faDocker,
   faGitAlt,
   faPhp,
@@ -22,17 +21,23 @@ import {
   faGitlab,
   faJira,
 } from "@fortawesome/free-brands-svg-icons";
-
 import {
   faServer,
   faCode,
   faToolbox,
-  faDatabase, // Ajouté
+  faDatabase,
 } from "@fortawesome/free-solid-svg-icons";
+import type {
+  EducationItem,
+  ExperienceItem,
+  NavLinkItem,
+  ProjectItem,
+  SkillsCollection,
+} from "@/types/portfolio";
 
-export const navLinks = [
+export const navLinks: NavLinkItem[] = [
   { id: "home", icon: FaHome, text: "Accueil", path: "/" },
-  { id: "skills", icon: FaCode, text: "Compétences", path: "/skills" },
+  { id: "skills", icon: FaCodeIcon, text: "Compétences", path: "/skills" },
   {
     id: "experience",
     icon: FaBriefcase,
@@ -49,7 +54,7 @@ export const navLinks = [
   { id: "contact", icon: FaEnvelope, text: "Contact", path: "/contact" },
 ];
 
-export const educations = [
+export const educations: EducationItem[] = [
   {
     period: "2023-08 - Présent",
     degree: "Master 2 en cours - Base de données et génie logiciel",
@@ -68,7 +73,7 @@ export const educations = [
   },
 ];
 
-export const experiences = [
+export const experiences: ExperienceItem[] = [
   {
     period: "05/2023 - Présent",
     title: "Développeur Full Stack",
@@ -108,7 +113,7 @@ export const experiences = [
   },
 ];
 
-export const projects = [
+export const projects: ProjectItem[] = [
   {
     title: "Vision 360",
     date: "2024- présent",
@@ -118,7 +123,6 @@ export const projects = [
     demo: "#",
     code: "#",
   },
-
   {
     title: "Application de reporting - Version 1",
     date: "2023 - 02/2024",
@@ -128,7 +132,6 @@ export const projects = [
     demo: "#",
     code: "#",
   },
-
   {
     title: "Microfinance Management",
     date: "09/2022 - 02/2023",
@@ -138,7 +141,6 @@ export const projects = [
     demo: "#",
     code: "#",
   },
-
   {
     title: "Gestion de stock",
     date: "01/2022 - 08/2022",
@@ -150,7 +152,7 @@ export const projects = [
   },
 ];
 
-export const skills = {
+export const skills: SkillsCollection = {
   backend: {
     title: "Back-End",
     icon: faServer,

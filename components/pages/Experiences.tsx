@@ -1,18 +1,15 @@
 "use client";
+
 import { Title } from "@/components/Title";
-import {
-  faBriefcase,
-  faCalendar,
-  faLocationDot,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBriefcase, faCalendar, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { experiences } from "../constant/data";
 import Shape from "@/components/Shape";
+import { experiences } from "@/app/constant/data";
 
-export default function Page() {
+export default function Experiences() {
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
@@ -20,10 +17,10 @@ export default function Page() {
   return (
     <section
       id="experience"
-      className="relative py-20 md:py-24 bg-gray-900 min-h-screen overflow-hidden px-4 md:px-8"
+      className="relative py-20 md:py-24 bg-gray-900 overflow-hidden px-4 md:px-8"
     >
-        <Shape />
-      <div className="container mx-auto  mt-10">
+      <Shape />
+      <div className="container mx-auto mt-10">
         <Title
           title="Expériences Professionnelles"
           subtitle="Construire, innover et évoluer à travers chaque mission"
@@ -40,14 +37,9 @@ export default function Page() {
               <div className="bg-gray-900/90 backdrop-blur-md rounded-2xl p-6 h-full">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-lg">
-                    <FontAwesomeIcon
-                      icon={faBriefcase}
-                      className="text-white text-xl"
-                    />
+                    <FontAwesomeIcon icon={faBriefcase} className="text-white text-xl" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-100">
-                    {exp.title}
-                  </h3>
+                  <h3 className="text-2xl font-bold text-gray-100">{exp.title}</h3>
                 </div>
 
                 <div className="space-y-2 mb-4">
@@ -64,12 +56,12 @@ export default function Page() {
                 </div>
 
                 <ul className="space-y-3">
-                  {exp.tasks.map((task, i) => (
+                  {exp.tasks.map((task, taskIndex) => (
                     <li
-                      key={`${task}-${i}`}
+                      key={`${task}-${taskIndex}`}
                       className="flex items-center justify-start gap-2 text-gray-300 text-sm"
                       data-aos="fade-right"
-                      data-aos-delay={i * 50}
+                      data-aos-delay={taskIndex * 50}
                     >
                       <span className="text-cyan-400 mt-1">▹</span>
                       {task}
