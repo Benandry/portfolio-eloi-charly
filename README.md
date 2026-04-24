@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 👨‍💻 Fullstack Developer Portfolio — Eloi Charly
 
-## Getting Started
+> Personal portfolio showcasing my work as a Fullstack Web Developer specialized in building modern, scalable and performant web applications.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌐 Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+👉 https://nandrix.vercel.app
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📌 About the Project
 
-## Learn More
+This portfolio is designed to present my skills, projects, and experience as a Fullstack Developer.
 
-To learn more about Next.js, take a look at the following resources:
+It focuses on:
+- Clean UI/UX
+- Performance optimization
+- Modern frontend architecture
+- Scalable backend integration
+- Developer experience (DX)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The goal is to reflect real-world production-level development practices.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🧰 Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Frontend
+- Next.js (React)
+- TypeScript
+- TailwindCSS
+- AOS
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Backend (if applicable)
+- Node.js / Symfony (depending on your project)
+- REST / API Platform
+- MongoDB / PostgreSQL
+
+### DevOps / Tools
+- Git & GitHub
+- Vercel / Docker
+- ESLint + Prettier
+- CI/CD pipelines
+
+---
+
+## ✨ Features
+
+- ⚡ Modern responsive design (mobile-first)
+- 🧠 Dynamic project showcase
+- 🎨 Clean UI with reusable components
+- 🚀 Optimized performance (SSR / SSG if Next.js)
+- 📂 Structured project architecture
+
+---
+
+## 📸 Preview
+
+> Add screenshots here
+
+```md
+![Home](./screenshots/home.png)
+![Projects](./screenshots/projects.png)
