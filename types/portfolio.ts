@@ -37,6 +37,7 @@ export interface ExperienceItem {
   company: string;
   location: string;
   tasks: string[];
+  technologies?: string[];
 }
 
 export interface ProjectItem {
@@ -63,4 +64,6 @@ export interface SkillsCollection {
   backend: SkillCategory;
   frontend: SkillCategory;
   tools: SkillCategory;
+  languages?: SkillCategory;
+  other?: SkillCategory;
 }

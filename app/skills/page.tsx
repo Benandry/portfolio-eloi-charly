@@ -39,7 +39,7 @@ export default function SkillsPage() {
           subtitle="Des compétences solides pour transformer des idées en solutions numériques innovantes"
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up">
-          {skillEntries.map(([key, category]) => (
+          {skillEntries.map(([key, category]) => category && (
             <div
               key={key}
               className="group relative p-[2px] rounded-2xl bg-gradient-to-br from-cyan-500/30 to-emerald-500/30 hover:shadow-2xl transition-all"

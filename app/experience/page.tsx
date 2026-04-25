@@ -1,7 +1,7 @@
 "use client";
 
 import { Title } from "@/components/Title";
-import { faBriefcase, faCalendar, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faBriefcase, faCalendar, faLocationDot, faCode } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -55,19 +55,38 @@ export default function ExperiencePage() {
                   </div>
                 </div>
 
-                <ul className="space-y-3">
+                <ul className="space-y-3 mb-4">
                   {exp.tasks.map((task, taskIndex) => (
                     <li
                       key={`${task}-${taskIndex}`}
-                      className="flex items-center justify-start gap-2 text-gray-300 text-sm"
+                      className="flex items-start justify-start gap-2 text-gray-300 text-sm"
                       data-aos="fade-right"
                       data-aos-delay={taskIndex * 50}
                     >
                       <span className="text-cyan-400 mt-1">▹</span>
-                      {task}
+                      <span>{task}</span>
                     </li>
                   ))}
                 </ul>
+
+                {exp.technologies && exp.technologies.length > 0 && (
+                  <div className="pt-4 border-t border-gray-700/50">
+                    <div className="flex items-center gap-2 mb-2">
+                      <FontAwesomeIcon icon={faCode} className="text-cyan-400 text-sm" />
+                      <span className="text-sm font-semibold text-gray-300">Technologies</span>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech, techIndex) => (
+                        <span
+                          key={`${tech}-${techIndex}`}
+                          className="px-2 py-1 text-xs font-medium bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 text-cyan-300 rounded-full border border-cyan-500/30"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className="absolute inset-0 -z-10 bg-gradient-to-br from-cyan-500/10 to-emerald-500/10 blur-xl opacity-30 transition-opacity" />
